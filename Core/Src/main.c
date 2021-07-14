@@ -18,7 +18,7 @@
   */
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
-#include "main.h"ds
+#include "main.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
@@ -156,7 +156,7 @@ int main(void)
 			  	  }
 			  	  default:
 			  	  {
-			  		  sprintf(TxDataBuffer , "\r\n****** Unknow Input ****** \r\nPlease try again\r\n\n\n\n\n");
+			  		  sprintf(TxDataBuffer , "\r\nPlease try again:[Unknow Input]\r\n");
 					  HAL_UART_Transmit(&huart2, (uint8_t*)TxDataBuffer , strlen(TxDataBuffer) , 1000);
 			  		  State_Display = 1;
 			  		  break;
@@ -220,7 +220,7 @@ int main(void)
 				  }
 				  default:
 				  {
-					  sprintf(TxDataBuffer , "\r\n****** Unknow Input ****** \r\nPlease try again\r\n\n\n\n\n");
+					  sprintf(TxDataBuffer , "\r\nPlease try again:[Unknow Input]\r\n\n");
 					  HAL_UART_Transmit(&huart2, (uint8_t*)TxDataBuffer , strlen(TxDataBuffer) , 1000);
 					  State_Display = 10;
 					  break;
@@ -244,12 +244,12 @@ int main(void)
 			  {
 				  if(ButtonPress[0] == 0)
 				  	  {
-					  	  sprintf(TxDataBuffer, "\r\nButton is pressed \r\n");
+					  	  sprintf(TxDataBuffer, "\r\nButton:[Pressed] \r\n");
 						  HAL_UART_Transmit(&huart2, (uint8_t*) TxDataBuffer,strlen(TxDataBuffer), 1000);
 				  	  }
 				  else
 				  	  {
-					  	  sprintf(TxDataBuffer, "\r\nButton isn't pressed \r\n");
+					  	  sprintf(TxDataBuffer, "\r\nButton:[Not Pressed] \r\n");
 					  	  HAL_UART_Transmit(&huart2, (uint8_t*) TxDataBuffer,strlen(TxDataBuffer), 1000);
 					  }
 				  State_Display = 20;
@@ -267,7 +267,7 @@ int main(void)
 				  }
 				  default:
 				  {
-					  sprintf(TxDataBuffer , "\r\n****** Unknow Input ****** \r\nPlease try again\r\n\n\n\n\n");
+					  sprintf(TxDataBuffer , "\r\nPlease try again:[Wrong Input]\r\n");
 					  HAL_UART_Transmit(&huart2, (uint8_t*)TxDataBuffer , strlen(TxDataBuffer) , 1000);
 					  State_Display = 20;
 					  break;
