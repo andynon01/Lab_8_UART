@@ -123,7 +123,7 @@ int main(void)
 	  {
 	  	  case 0: // Start State
 	  	  {
-	  		sprintf(TxDataBuffer , "\n\n\n\n\n");
+	  		  sprintf(TxDataBuffer , "\n\n\n\n\n");
 	  		  HAL_UART_Transmit(&huart2, (uint8_t*)TxDataBuffer , strlen(TxDataBuffer) , 1000);
 	  		  State_Display = 1;
 	  		  break;
@@ -156,7 +156,7 @@ int main(void)
 			  	  }
 			  	  default:
 			  	  {
-			  		  sprintf(TxDataBuffer , "\r\nPlease try again:[Unknow Input]\r\n");
+			  		  sprintf(TxDataBuffer , "\r\nPlease try again:[Unknown Input]\r\n");
 					  HAL_UART_Transmit(&huart2, (uint8_t*)TxDataBuffer , strlen(TxDataBuffer) , 1000);
 			  		  State_Display = 1;
 			  		  break;
@@ -168,7 +168,7 @@ int main(void)
 
 		  case 10: // LED Menu Print
 		  {
-			  sprintf(TxDataBuffer , "****** LED Control ****** \r\na.Speed Up +1 Hz \r\ns.Speed Down -1 Hz\r\nd.On / Off\r\nx.Back\r\n");
+			  sprintf(TxDataBuffer , "****** LED Control ****** \r\na.Speed Up +1 Hz \r\ns.Speed Down -1 Hz\r\nd.On / Off \r\nx.Back\r\n");
 			  HAL_UART_Transmit(&huart2, (uint8_t*)TxDataBuffer , strlen(TxDataBuffer) , 1000);
 			  sprintf(TxDataBuffer, "\r\nLED Frequency:[%d]\r\n", LED_Frequency);
 			  HAL_UART_Transmit(&huart2, (uint8_t*)TxDataBuffer, strlen(TxDataBuffer), 1000);
@@ -220,7 +220,7 @@ int main(void)
 				  }
 				  default:
 				  {
-					  sprintf(TxDataBuffer , "\r\nPlease try again:[Unknow Input]\r\n\n");
+					  sprintf(TxDataBuffer , "\r\nPlease try again:[Unknown Input]\r\n\n");
 					  HAL_UART_Transmit(&huart2, (uint8_t*)TxDataBuffer , strlen(TxDataBuffer) , 1000);
 					  State_Display = 10;
 					  break;
